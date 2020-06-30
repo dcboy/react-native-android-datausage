@@ -6,10 +6,10 @@ import android.app.usage.NetworkStatsManager;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.os.Build;
-import android.os.RemoteException;
 import android.telephony.TelephonyManager;
 
 import java.util.Date;
+import java.lang.Exception;
 
 @TargetApi(Build.VERSION_CODES.M)
 public class NetworkStatsHelper {
@@ -37,7 +37,7 @@ public class NetworkStatsHelper {
                                 getSubscriberId(context, ConnectivityManager.TYPE_MOBILE),
                                 startDate != null ? startDate.getTime() : 0,
                                 endDate != null ? endDate.getTime() : System.currentTimeMillis());
-        } catch (RemoteException e) {
+        } catch (Exception e) {
             return -1;
         }
         return bucket.getRxBytes();
@@ -54,7 +54,7 @@ public class NetworkStatsHelper {
                                     getSubscriberId(context, ConnectivityManager.TYPE_MOBILE),
                                     startDate != null ? startDate.getTime() : 0,
                                     endDate != null ? endDate.getTime() : System.currentTimeMillis());
-        } catch (RemoteException e) {
+        } catch (Exception e) {
             return -1;
         }
         return bucket.getTxBytes();
@@ -71,7 +71,7 @@ public class NetworkStatsHelper {
                                 "",
                                 startDate != null ? startDate.getTime() : 0,
                                 endDate != null ? endDate.getTime() : System.currentTimeMillis());
-        } catch (RemoteException e) {
+        } catch (Exception e) {
             return -1;
         }
         return bucket.getRxBytes();
@@ -88,7 +88,7 @@ public class NetworkStatsHelper {
                     "",
                     startDate != null ? startDate.getTime() : 0,
                     endDate != null ? endDate.getTime() : System.currentTimeMillis());
-        } catch (RemoteException e) {
+        } catch (Exception e) {
             return -1;
         }
         return bucket.getTxBytes();
@@ -107,7 +107,7 @@ public class NetworkStatsHelper {
                                     startDate != null ? startDate.getTime() : 0,
                                     endDate != null ? endDate.getTime() : System.currentTimeMillis(),
                                     packageUid);
-        } catch (RemoteException e) {
+        } catch (Exception e) {
             return -1;
         }
         NetworkStats.Bucket bucket = new NetworkStats.Bucket();
@@ -131,7 +131,7 @@ public class NetworkStatsHelper {
                                 startDate != null ? startDate.getTime() : 0,
                                 endDate != null ? endDate.getTime() : System.currentTimeMillis(),
                                 packageUid);
-        } catch (RemoteException e) {
+        } catch (Exception e) {
             return -1;
         }
         NetworkStats.Bucket bucket = new NetworkStats.Bucket();
@@ -154,7 +154,7 @@ public class NetworkStatsHelper {
                                 startDate != null ? startDate.getTime() : 0,
                                 endDate != null ? endDate.getTime() : System.currentTimeMillis(),
                     packageUid);
-        } catch (RemoteException e) {
+        } catch (Exception e) {
             return -1;
         }
         NetworkStats.Bucket bucket = new NetworkStats.Bucket();
@@ -177,7 +177,7 @@ public class NetworkStatsHelper {
                                     startDate != null ? startDate.getTime() : 0,
                                     endDate != null ? endDate.getTime() : System.currentTimeMillis(),
                                     packageUid);
-        } catch (RemoteException e) {
+        } catch (Exception e) {
             return -1;
         }
         NetworkStats.Bucket bucket = new NetworkStats.Bucket();
